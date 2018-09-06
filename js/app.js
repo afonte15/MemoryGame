@@ -15,12 +15,13 @@ const cards = ["fa fa-paper-plane-o", "fa fa-paper-plane-o",
             "fa fa-cube", "fa fa-cube"];
 
 //start the game for the first time
-// init();
+// showAllCards();
 
 // stores cards            
 const deckOfCards = document.querySelector(".deck");  //ul class deck
 
-// let showCards = [];
+// showCards();
+
 let clickedCards = [];
 
 const moveCount = document.querySelector(".moves");
@@ -53,23 +54,30 @@ restartButton.addEventListener("click", function() {
 */
 
 //Display Cards where all li of cards use to be 
-// function init() {
-for (let i = 0; i < cards.length; i++) {
-    const card = document.createElement("li");
-    card.classList.add("card");
-    card.innerHTML = `<i class="${cards[i]}"<i>`; //template literal add the icons to the cards
-    deckOfCards.appendChild(card);
+// function showAllCards(){
+    for (let i = 0; i < cards.length; i++) {
+        const card = document.createElement("li");
+        card.classList.add("card");
+        card.innerHTML = `<i class="${cards[i]}"<i>`; //template literal add the icons to the cards
+        deckOfCards.appendChild(card);
+
+        listenForClick(card);
+}
+
 
     //make cards clickable with event - listen for click
-    card.addEventListener("click", e => {
-        const clickedCard = e.target;
-        if (clickedCard.classList.contains('card') && !clickedCard.classList.contains('open')){
-            clickedCard.classList.toggle('open');
-            clickedCard.classList.toggle('show');
-            addClickedCard(clickedCard); //problem
-        } 
+    function listenForClick (card){
+        card.addEventListener("click", e => {
+            const clickedCard = e.target;
+            if (clickedCard.classList.contains('card') && !clickedCard.classList.contains('open')) {
+                clickedCard.classList.toggle('open');
+                clickedCard.classList.toggle('show');
+                addClickedCard(clickedCard);
+            }
+        
     
     });
+// }
 
      /*
                 0. Wrap all the functions below to the setTimeout
@@ -99,7 +107,7 @@ for (let i = 0; i < cards.length; i++) {
                     clickCard.classList.remove("open", "show");
                 }
                 
-            }, 1000)
+            }, 1000);
             
         }
         else {
@@ -130,7 +138,7 @@ function shuffle(array) {
 
     return array;
 }
-}
+    }
 
 
 
