@@ -104,9 +104,9 @@ function showCards(){
         if (clickedCards.length === 1) {
             //increase counter here
             addMove();
-            console.log('something')
+            // console.log('something')
             card.classList.add("open", "show")
-            clickedCards.push(src.card);
+            clickedCards.push(card);
             let firstCardName = previousCard.children[0].classList[1];
             clickedCards = [];
             setTimeout(function() {
