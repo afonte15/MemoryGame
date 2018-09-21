@@ -71,10 +71,11 @@ h1 {
     cursor: default;
 }
 
+/* tried adding .png */
 .deck .card.show .png{
     height: 50px;
 }
-
+/* tried adding .png */
 .deck .card.match .png {
     cursor: default;
     background: #02ccba;
