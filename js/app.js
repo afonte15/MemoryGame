@@ -5,22 +5,24 @@
  */
 
 
-const cards = ["fa fa-paper-plane-o", "fa fa-paper-plane-o",
-            "fa fa-diamond", "fa fa-diamond", 
-            "fa fa-bicycle", "fa fa-bicycle",
-            "fa fa-anchor", "fa fa-anchor",
-            "fa fa-leaf", "fa fa-leaf",
-            "fa fa-bolt", "fa fa-bolt",
-            "fa fa-bomb", "fa fa-bomb", 
-            "fa fa-cube", "fa fa-cube"];
+const cards = ["venom.png", "venom.png",
+            "captainamerica.png", "captainamerica", 
+            "cyclops.png", "cyclops.png",
+            "storm.png", "storm.png",
+            "groot.png", "groot.png",
+            "hawkeye.png", "hawkeye.png",
+            "ironman.png", "ironman.png", 
+            "spiderman.png", "spiderman.png"];
 
-//start the game for the first time
-// showAllCards();
+
 
 // stores cards            
 const deckOfCards = document.querySelector(".deck");  //ul class deck
 
-// showCards();
+//makes cards visible
+showCards();
+
+
 
 let clickedCards = [];
 
@@ -32,11 +34,13 @@ function addMove() {
 
 }
 
+
+
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
     let cards = deckOfCards.children;
     for (let i=0; i<cards.length; i++) {
-        cards[i].classList.remove("open", "show");
+        cards.src[i].classList.remove("open", "show");  //added .src and it made the back of the cards appear
     }
     moveCounter = 0;
     moveCount.innerHTML = moveCounter;
@@ -54,17 +58,19 @@ restartButton.addEventListener("click", function() {
 */
 
 //Display Cards where all li of cards use to be 
-// function showAllCards(){
+function showCards(){
     for (let i = 0; i < cards.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `<i class="${cards[i]}"<i>`; //template literal add the icons to the cards
         deckOfCards.appendChild(card);
+    
 
         listenForClick(card);
+        
 }
 
-
+}
     //make cards clickable with event - listen for click
     function listenForClick (card){
         card.addEventListener("click", e => {
@@ -79,6 +85,8 @@ restartButton.addEventListener("click", function() {
     });
 // }
 
+
+
      /*
                 0. Wrap all the functions below to the setTimeout
                 1. Get the "i" element
@@ -91,18 +99,18 @@ restartButton.addEventListener("click", function() {
     function addClickedCard(clickCard) {
         
         const previousCard = clickedCards[0];
-        const newCardName = clickCard.children[0].classList[1];
+        const secondCard = clickCard.children[0].classList[1];
         console.log(clickCard.children[0].classList[1]);
         if (clickedCards.length === 1) {
             //increase counter here
             addMove();
             console.log('something')
             card.classList.add("open", "show")
-            clickedCards.push(card);
+            clickedCards.push(src.card);
             let firstCardName = previousCard.children[0].classList[1];
             clickedCards = [];
             setTimeout(function() {
-                if (newCardName !== firstCardName) {
+                if (secondCard !== firstCardName) {
                     previousCard.classList.remove("open", "show");
                     clickCard.classList.remove("open", "show");
                 }
@@ -115,6 +123,16 @@ restartButton.addEventListener("click", function() {
         }
 
 }
+
+/*
+Star Ratings 
+*/
+
+const starRating = document.querySelector(".stars");
+function ratings() {
+
+}
+
 
 
 /*
