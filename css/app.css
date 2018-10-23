@@ -55,6 +55,7 @@ h1 {
     height: 125px;
     width: 125px;
     background: #2e3d49;
+    background-size: 0%;
     /* font-size: 0; */
     color: #ffffff;
     border-radius: 8px;
@@ -102,6 +103,9 @@ h1 {
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+}
+.score-panel .stars .hide {
+     display: none;
 }
 
 .score-panel .restart {
