@@ -5,8 +5,8 @@
  */
 
 
-const cards = ["venom.png", "venom.png",
-            "captainamerica.png", "captainamerica", 
+let cards = ["venom.png", "venom.png",
+            "captainamerica.png", "captainamerica.png", 
             "cyclops.png", "cyclops.png",
             "storm.png", "storm.png",
             "groot.png", "groot.png",
@@ -14,7 +14,11 @@ const cards = ["venom.png", "venom.png",
             "ironman.png", "ironman.png", 
             "spiderman.png", "spiderman.png"];
 
-
+let gameStarted = false;
+let won = false;
+let matchingPair = 0;
+let clickBlocked = false;
+cards = shuffle(cards);
 
 // stores cards            
 const deckOfCards = document.querySelector(".deck");  //ul class deck
@@ -22,7 +26,37 @@ const deckOfCards = document.querySelector(".deck");  //ul class deck
 //makes cards visible
 showCards();
 
+/*
+Timer
+*/
 
+let time = 0;
+
+const timer = setInterval(showTime, 1000);
+
+function showTime(timer) {
+    //console.log('working')
+    if (!gameStarted || won) return;
+    time++;
+    let mins = Math.round(time / 60); // 1 not 01
+    if (mins < 10) {
+        mins = "0" + mins;
+    }
+    let seconds = time % 60;
+    if(seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+
+    //console.log(mins, " ", seconds);
+    let minutesElem = document.getElementById('minutes');
+    let secondsElem = document.getElementById('seconds');
+    minutesElem.innerHTML = mins;
+    secondsElem.innerHTML = seconds;
+}
+function resetTimer() {
+    clearInterval(timer);
+}
 
 let clickedCards = [];
 
@@ -31,22 +65,43 @@ let moveCounter = 0;
 function addMove() {
     moveCounter ++;
     moveCount.innerHTML = moveCounter;
-
+    checkRating();
 }
 
+function checkRating() {
 
+    if(moveCounter <= 18)
+        return true;
+
+    
+    startIndex = moveCounter > 26 ? 0 : 1;
+
+    document.querySelectorAll('.fa-star').forEach(function (item, index) {
+        if (index > startIndex) item.classList.add('hide');
+    });
+}
+
+//make function add reset timer
 
 const restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
+
+    won = false;
+    matchingPair = 0;
+    time = 0;
+
     let cards = deckOfCards.children;
     for (let i=0; i<cards.length; i++) {
-        cards.src[i].classList.remove("open", "show");  //added .src and it made the back of the cards appear
+        cards[i].classList.remove("open", "show");
+        
     }
     moveCounter = 0;
     moveCount.innerHTML = moveCounter;
     clickedCards = [];
 
-
+    document.querySelectorAll('.fa-star').forEach(function (item, index) {
+        item.classList.remove('hid');
+    });
 });
 
 /*
@@ -59,10 +114,14 @@ restartButton.addEventListener("click", function() {
 
 //Display Cards where all li of cards use to be 
 function showCards(){
+
     for (let i = 0; i < cards.length; i++) {
-        const card = document.createElement("li");
+        const card = document.createElement("div");
         card.classList.add("card");
-        card.innerHTML = `<i class="${cards[i]}"<i>`; //template literal add the icons to the cards
+        card.style.backgroundImage = `url(img/${cards[i]})`;
+        card.style.backgroundRepeat = "no-repeat";  //should be done in css
+        card.style.backgroundPosition = "center";  //should be done in css
+        card.value = cards[i];
         deckOfCards.appendChild(card);
     
 
@@ -74,8 +133,9 @@ function showCards(){
     //make cards clickable with event - listen for click
     function listenForClick (card){
         card.addEventListener("click", e => {
+            gameStarted = true;
             const clickedCard = e.target;
-            if (clickedCard.classList.contains('card') && !clickedCard.classList.contains('open')) {
+            if (!clickBlocked && clickedCard.classList.contains('card') && !clickedCard.classList.contains('open')) {
                 clickedCard.classList.toggle('open');
                 clickedCard.classList.toggle('show');
                 addClickedCard(clickedCard);
@@ -83,7 +143,7 @@ function showCards(){
         
     
     });
-// }
+}
 
 
 
@@ -99,40 +159,37 @@ function showCards(){
     function addClickedCard(clickCard) {
         
         const previousCard = clickedCards[0];
-        const secondCard = clickCard.children[0].classList[1];
-        console.log(clickCard.children[0].classList[1]);
+        console.log('Im in');
         if (clickedCards.length === 1) {
+
+
             //increase counter here
             addMove();
             // console.log('something')
-            card.classList.add("open", "show")
-            clickedCards.push(card);
-            let firstCardName = previousCard.children[0].classList[1];
-            clickedCards = [];
-            setTimeout(function() {
-                if (secondCard !== firstCardName) {
+
+            if(previousCard.value != clickCard.value) {
+                clickBlocked = true;
+                setTimeout(function () {
+                    clickBlocked = false;
                     previousCard.classList.remove("open", "show");
                     clickCard.classList.remove("open", "show");
+                }, 1000);
+            } else {
+                matchingPair++;
+                if(matchingPair * 2 === cards.length) {
+                    won = true;
+                    alert('You won!');
                 }
-                
-            }, 1000);
+            }
+            
+            clickedCards = [];
             
         }
         else {
-            clickedCards.push(card);
+            clickedCards.push(clickCard);
         }
 
 }
-
-/*
-Star Ratings 
-*/
-
-const starRating = document.querySelector(".stars");
-function ratings() {
-
-}
-
 
 
 /*
@@ -156,7 +213,7 @@ function shuffle(array) {
 
     return array;
 }
-    }
+    
 
 
 
