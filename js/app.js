@@ -90,14 +90,27 @@ restartButton.addEventListener("click", function() {
     matchingPair = 0;
     time = 0;
 
-    let cards = deckOfCards.children;
-    for (let i=0; i<cards.length; i++) {
-        cards[i].classList.remove("open", "show");
+    let cards1 = deckOfCards.children;
+    cards = shuffle(cards)
+    for (let i=0; i<cards1.length; i++) {
+        cards1[i].classList.remove("open", "show");
+        //create a function - do not repeat code?
+        cards1[i].style.backgroundImage = `url(img/${cards[i]})`;
+        cards1[i].style.backgroundRepeat = "no-repeat";  //should be done in css
+        cards1[i].style.backgroundPosition = "center";  //should be done in css
+        cards1[i].value = cards[i];
         
     }
+    let minutesElem = document.getElementById('minutes');
+    let secondsElem = document.getElementById('seconds');
+    minutesElem.innerHTML = '00';
+    secondsElem.innerHTML = '00';
     moveCounter = 0;
     moveCount.innerHTML = moveCounter;
     clickedCards = [];
+    gameStarted = false;
+    
+    
 
     document.querySelectorAll('.fa-star').forEach(function (item, index) {
         item.classList.remove('hid');
