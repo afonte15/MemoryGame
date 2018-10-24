@@ -6,8 +6,8 @@
 
 
 let cards = ["venom.png", "venom.png",
-            "captainamerica.png", "captainamerica.png", 
-            "cyclops.png", "cyclops.png",
+            "daredevil.png", "daredevil.png", 
+            "goya2.png", "goya2.png",
             "storm.png", "storm.png",
             "groot.png", "groot.png",
             "hawkeye.png", "hawkeye.png",
