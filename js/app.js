@@ -5,7 +5,7 @@
  */
 
 
-let cards = ["venom.png", "venom.png",
+let cards = ["cable.png", "cable.png",
             "daredevil.png", "daredevil.png", 
             "goya2.png", "goya2.png",
             "storm.png", "storm.png",
