@@ -17,10 +17,11 @@ body {
 }
 
 body {
-    background: #FDFFFC;	 /* /url('../img/joe-woods-739738-unsplash.jpg'); Background pattern from Subtle Patterns */
+    /* background: #FDFDFD	url('../img/background.png'); Background pattern from Subtle Patterns */
     background-repeat: no-repeat;
     background-position: center; 
     font-family: 'Permanent Marker', cursive;
+   
 }
 
 .container {
@@ -43,8 +44,8 @@ h1 {
 .deck {
     width: 72vw;
     min-height: 80vw;
-   background: linear-gradient(160deg, #262626 50%, #C62132 20%); */
-    /* background: #C62132;	url('../img/background.png'); */
+   /* background: linear-gradient(160deg, #262626 50%, #C62132 20%);  */
+    background: #FDFDFD url('../img/background.png');
     padding: 32px;
     border-radius: 10px;
     /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
@@ -55,10 +56,12 @@ h1 {
     margin: 0 0 3em;
 }
 
+
+
 .deck .card {
     height: 15vw;
     width: 15vw;
-    background: #1F3451;
+    /* background:url('../img/background.png'); */
     background-size: 0%;
     /* font-size: 0; */
     color: black;
