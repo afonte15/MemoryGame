@@ -5,11 +5,11 @@
  */
 
 
-let cards = ["venom.png", "venom.png",
+let cards = ["goya2.png", "goya2.png",
             "captainamerica.png", "captainamerica.png", 
-            "cyclops.png", "cyclops.png",
-            "storm.png", "storm.png",
-            "groot.png", "groot.png",
+            "cable.png", "cable.png",
+            "joker.png", "joker.png",
+            "deadpool.png", "deadpool.png",
             "hawkeye.png", "hawkeye.png",
             "ironman.png", "ironman.png", 
             "spiderman.png", "spiderman.png"];
