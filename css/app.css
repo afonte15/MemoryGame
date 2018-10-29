@@ -1,13 +1,11 @@
 html {
     box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
-
 html,
 body {
     width: 100%;
@@ -15,12 +13,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .fa-facebook-f,
 .fa-instagram,
-.fa-github,
-.fa-linkedin-in {
+.fa-twitter,
+.fa-snapchat-ghost {
     margin-right: 1.2vw;
+    font-size: 2.5vw;
 }
 .fa-facebook-f {
     color: #3b5998;
@@ -35,7 +33,7 @@ body {
     color: #fffc00;
 }
 .stroke-transparent {
- -webkit-text-stroke: .1px black;
+    -webkit-text-stroke: .1px black;
 }
 body {
     /* background: #FDFDFD	url('../img/background.png'); Background pattern from Subtle Patterns */
@@ -44,28 +42,25 @@ body {
     font-family: 'Permanent Marker', cursive;
     /* background-position:fixed; */
     width:100%;
-   
 }
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image:url('../img/background.png');
-    background-size: cover;
-    background-position-x: center;
-        
+    /* background-image:url('../img/background.png');
+    background-size: cover; */
+    /* background-position-x: center; */
+    margin-top: 2vw;
 }
-
-/* img {
-    padding-top:50px;
-} */
-
+a:-webkit-any-link {
+    text-decoration-line: none;
+}
 h1 {
     /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Shadows Into Light Two';
     font-weight: 300;
+    font-size: 3vw;
 }
 h3 {
     color: #303030;
@@ -73,17 +68,18 @@ h3 {
     text-align: center;
     font-size: 2vw;
 }
-
 /*
  * Styles for the deck of cards
  */
 
 .deck {
-    width: 72vw;
+    width: 75vw;
     min-height: 80vw;
    /* background: linear-gradient(160deg, #262626 50%, #C62132 20%);  */
-    
+    background-image:url('../img/background.png');
     background-size: cover;
+    left: 20%;
+    background-position-x: center;
     padding: 32px;
     border-radius: 10px;
     /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
@@ -93,11 +89,6 @@ h3 {
     align-items: center;
     margin: 0 0 3em;
 }
-
-
-
-
-
 .deck .card {
     height: 15vw;
     width: 15vw;
@@ -118,10 +109,10 @@ h3 {
     background: #303030	;
     cursor: default;
 }
-
 /* tried adding .png */
 .deck .card.show .png{
     height: 50px;
+    position: fixed;
 }
 /* tried adding .png */
 .deck .card.match .png {
@@ -129,37 +120,33 @@ h3 {
     background: #02ccba;
     height: 50px;
 }
-
 /*
  * Styles for the Score Panel
  */
-
 .score-panel {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    background-color: white;
+    font-family: 'Shadows Into Light Two';
 }
-
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
-
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
 .score-panel .stars .hide {
-     display: none;
+    display: none;
 }
-
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
-
 .timer {
 	display: inline-block;
 	margin: 2px;
