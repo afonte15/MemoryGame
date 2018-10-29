@@ -16,44 +16,50 @@ body {
     padding: 0;
 }
 
-body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+.fa-facebook-f,
+.fa-instagram,
+.fa-twitter,
+.fa-snapchat-ghost {
+    margin-right: 1.2vw;
+    font-size: 2.5vw;
 }
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.fa-facebook-f {
+    color: #3b5998;
 }
-
-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+.fa-instagram {
+    color: #517fa4;
 }
-
+.fa-twitter {
+    color: #1da1f2;
+}
+.fa-snapchat-ghost {
+    color: #fffc00;
+}
+.stroke-transparent {
+    -webkit-text-stroke: .1px black;
+}
 /*
  * Styles for the deck of cards
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 680px;
+    min-height: 690px;
     background: linear-gradient(160deg, #262626 50%, #C62132 20%);
     padding: 32px;
     border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 13px 16px 21px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 0 0 4em;
 }
 
- .card {
-    height: 11.1vw;
-    width: 11.1vw;
+ div.card {
+    height: 12vw;
+    width: 12vw;
+    /* background: linear-gradient(160deg, pink 50%, cyan 50%); */
     background: #2e3d49;
     background-size: 0%;
     /* font-size: 0; */
@@ -73,15 +79,15 @@ h1 {
 }
 
 /* tried adding .png */
-/* .deck .card.show .png{
+.deck .card.show .png{
     height: 30vw;
-} */
+} 
 /* tried adding .png */
-/* .deck .card.match .png {
+.deck .card.match .png {
     cursor: default;
     background: #02ccba;
     height: 50px;
-} */
+}
 
 /*
  * Styles for the Score Panel

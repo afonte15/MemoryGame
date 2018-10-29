@@ -6,13 +6,13 @@
 
 
 let cards = ["goya2.png", "goya2.png",
-            "captainamerica.png", "captainamerica.png", 
-            "cable.png", "cable.png",
+            "thanos.png", "thanos.png", 
+            "stormTrooper.png", "stormTrooper.png",
             "joker.png", "joker.png",
             "deadpool.png", "deadpool.png",
-            "hawkeye.png", "hawkeye.png",
-            "ironman.png", "ironman.png", 
-            "spiderman.png", "spiderman.png"];
+            "spiderman2.png", "spiderman2.png",
+            "ironman2.png", "ironman2.png", 
+            "daredevil.png", "daredevil.png"];
 
 let gameStarted = false;
 let won = false;
