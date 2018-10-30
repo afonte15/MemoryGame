@@ -14,29 +14,97 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: #F5F5F5;
+}
+.container {
+    font-family: 'Shadows Into Light Two';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    /* background-image:url('../img/background.png');
+    background-size: cover; */
+    /* background-position-x: center; */
+    margin-top: 2vw;
+}
+ul.website{
+    list-style:none;
+    font-size: 2vw;
+    /* text-decoration: none; */
+}
+ul.website li a {
+    text-decoration: none;
+    color:black;
+}
+ul.website li a:hover {
+    border-bottom: .2vw solid #c6282d;
+    color: black;
+}
+a:-webkit-any-link {
+    text-decoration-line: none;
+    color: #262626;
+}
+ul.icons {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+ul.icons > li {
+  display: inline-block;
 }
 
-.fa-facebook-f,
-.fa-instagram,
-.fa-twitter,
-.fa-snapchat-ghost {
-    margin-right: 1.2vw;
-    font-size: 2.5vw;
+ul.icons > li > a .fa-facebook-f{
+  display: inline-block;
+  font-size: 1.5vw;
+  line-height: 3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 36px;
+  background-color: #3b5998;;
+  color: #fff;
+  margin: 0 3px 3px 0;
 }
-.fa-facebook-f {
-    color: #3b5998;
+ul.icons > li > a .fa-instagram{
+  display: inline-block;
+  font-size: 1.6vw;
+  line-height: 3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 36px;
+  background-color:#517fa4;
+  color: #fff;
+  margin: 0 3px 3px 0;
 }
-.fa-instagram {
-    color: #517fa4;
+ul.icons > li > a .fa-twitter{
+  display: inline-block;
+  font-size: 1.5vw;
+  line-height: 3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 36px;
+  background-color: #1da1f2;
+  color: #fff;
+  margin: 0 3px 3px 0;
 }
-.fa-twitter {
-    color: #1da1f2;
+ul.icons > li > a .fa-snapchat-ghost{
+  display: inline-block;
+  font-size: 1.6vw;
+  line-height: 3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 36px;
+  background-color: #fffc00;
+  color: #fff;
+  margin: 0 3px 3px 0;
 }
-.fa-snapchat-ghost {
-    color: #fffc00;
-}
+/* ul.icons > li > a:hover {
+  text-decoration: none;
+  background-color: #ee7c22;
+} */
 .stroke-transparent {
-    -webkit-text-stroke: .1px black;
+    -webkit-text-stroke: 1px black;
 }
 /*
  * Styles for the deck of cards
@@ -111,7 +179,7 @@ body {
     display: inline-block;
 }
 .score-panel .stars .hide {
-     display: none;
+    display: none;
 }
 
 .score-panel .restart {
