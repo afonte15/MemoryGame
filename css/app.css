@@ -1,13 +1,11 @@
 html {
     box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
-
 html,
 body {
     width: 100%;
@@ -23,15 +21,11 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    /* background-image:url('../img/background.png');
-    background-size: cover; */
-    /* background-position-x: center; */
     margin-top: 2vw;
 }
 ul.website{
     list-style:none;
     font-size: 2vw;
-    /* text-decoration: none; */
 }
 ul.website li a {
     text-decoration: none;
@@ -46,62 +40,64 @@ a:-webkit-any-link {
     color: #262626;
 }
 ul.icons {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin-left: 1.9vw;
+    margin-bottom: 1.5vw;
 }
 ul.icons > li {
-  display: inline-block;
+    display: inline-block;  
 }
-
 ul.icons > li > a .fa-facebook-f{
-  display: inline-block;
-  font-size: 1.5vw;
-  line-height: 3vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 36px;
-  background-color: #3b5998;;
-  color: #fff;
-  margin: 0 3px 3px 0;
+    display: inline-block;
+    font-size: 1.5vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #3b5998;;
+    color: #fff;
+    margin: 0 3px 3px 0;
 }
 ul.icons > li > a .fa-instagram{
-  display: inline-block;
-  font-size: 1.6vw;
-  line-height: 3vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 36px;
-  background-color:#517fa4;
-  color: #fff;
-  margin: 0 3px 3px 0;
+    display: inline-block;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color:#517fa4;
+    color: #fff;
+    margin: 0 3px 3px 0;
 }
 ul.icons > li > a .fa-twitter{
-  display: inline-block;
-  font-size: 1.5vw;
-  line-height: 3vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 36px;
-  background-color: #1da1f2;
-  color: #fff;
-  margin: 0 3px 3px 0;
+    display: inline-block;
+    font-size: 1.5vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #1da1f2;
+    color: #fff;
+    margin: 0 3px 3px 0;
 }
 ul.icons > li > a .fa-snapchat-ghost{
-  display: inline-block;
-  font-size: 1.6vw;
-  line-height: 3vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 36px;
-  background-color: #fffc00;
-  color: #fff;
-  margin: 0 3px 3px 0;
+    display: inline-block;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #fffc00;
+    color: #fff;
+    margin: 0 3px 3px 0;
 }
+/* might use later*/
 /* ul.icons > li > a:hover {
-  text-decoration: none;
-  background-color: #ee7c22;
+    text-decoration: none;
+    background-color: #ee7c22;
 } */
 .stroke-transparent {
     -webkit-text-stroke: 1px black;
@@ -109,7 +105,6 @@ ul.icons > li > a .fa-snapchat-ghost{
 /*
  * Styles for the deck of cards
  */
-
 .deck {
     width: 680px;
     min-height: 690px;
@@ -123,8 +118,7 @@ ul.icons > li > a .fa-snapchat-ghost{
     align-items: center;
     margin: 0 0 4em;
 }
-
- div.card {
+.card {
     height: 12vw;
     width: 12vw;
     /* background: linear-gradient(160deg, pink 50%, cyan 50%); */
@@ -139,41 +133,22 @@ ul.icons > li > a .fa-snapchat-ghost{
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
 .deck .card.open {
     transform: rotateY(0);
     background: black;
     cursor: default;
 }
-
-/* tried adding .png */
-.deck .card.show .png{
-    height: 30vw;
-} 
-/* tried adding .png */
-.deck .card.match .png {
-    cursor: default;
-    background: #02ccba;
-    height: 50px;
-}
-
-/*
- * Styles for the Score Panel
- */
-
 .score-panel {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
 }
-
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
-
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
@@ -181,14 +156,90 @@ ul.icons > li > a .fa-snapchat-ghost{
 .score-panel .stars .hide {
     display: none;
 }
-
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
-
 .timer {
 	display: inline-block;
-	margin: 2px;
-    padding-left: 20px;
+	margin: .1vw;
+    padding-left: 4vw;
+    font-weight: bolder;
+}
+/*footer*/
+footer {
+    margin: 0;
+    padding-top: 0;
+    width: 100%;
+    padding-bottom: 2vw;
+}
+p {
+    text-align: center;
+    font-size: 1vw;
+}
+ul.footer_icons {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-left: .5vw;
+    text-align: center;
+}
+ul.footer_icons > li {
+    display: inline-block;
+}
+
+ul.footer_icons > li > a .fa-facebook-f{
+    display: inline-block;
+    font-size: 1.5vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #3b5998;;
+    color: #fff;
+    margin: 0 3px 3px 0;
+}
+ul.footer_icons > li > a .fa-instagram{
+    display: inline-block;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color:#517fa4;
+    color: #fff;
+    margin: 0 3px 3px 0;
+}
+ul.footer_icons > li > a .fa-twitter{
+    display: inline-block;
+    font-size: 1.5vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #1da1f2;
+    color: #fff;
+    margin: 0 3px 3px 0;
+}
+ul.footer_icons > li > a .fa-snapchat-ghost{
+    display: inline-block;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #fffc00;
+    color: #fff;
+    margin: 0 3px 3px 0;
+}
+ul.footer_icons > li > a .fa-linkedin-in{
+    display: inline-block;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 36px;
+    background-color: #0077B5;
+    color: #fff;
+    margin: 0 3px 3px 0;
 }
