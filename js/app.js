@@ -96,8 +96,8 @@ restartButton.addEventListener("click", function() {
         cards1[i].classList.remove("open", "show");
         //create a function - do not repeat code?
         cards1[i].style.backgroundImage = `url(img/${cards[i]})`;
-        cards1[i].style.backgroundRepeat = "no-repeat";  //should be done in css
-        cards1[i].style.backgroundPosition = "center";  //should be done in css
+        cards1[i].style.backgroundRepeat = "no-repeat";  //should be done in css?
+        cards1[i].style.backgroundPosition = "center";  //should be done in css?
         cards1[i].value = cards[i];
         
     }
@@ -117,31 +117,20 @@ restartButton.addEventListener("click", function() {
     });
 });
 
-/*
-    1. define the global variable "counter"
-    2. Define the vaiable with the start rate (that can be object {onestart: 5, twostars: 9})
-    2.1. Define the 'stars' variable 
-    3. Increase counter each time you click on two cards
-    4. on the end of the game check how many moves have you made and set the stars
-*/
-
-//Display Cards where all li of cards use to be 
 function showCards(){
 
     for (let i = 0; i < cards.length; i++) {
         const card = document.createElement("div");
         card.classList.add("card");
         card.style.backgroundImage = `url(img/${cards[i]})`;
-        card.style.backgroundRepeat = "no-repeat";  //should be done in css
-        card.style.backgroundPosition = "center";  //should be done in css
+        card.style.backgroundRepeat = "no-repeat";  //should be done in css?
+        card.style.backgroundPosition = "center";  //should be done in css?
         card.value = cards[i];
         deckOfCards.appendChild(card);
     
 
         listenForClick(card);
-        
-}
-
+        }
 }
     //make cards clickable with event - listen for click
     function listenForClick (card){
@@ -157,17 +146,6 @@ function showCards(){
     
     });
 }
-
-
-
-     /*
-                0. Wrap all the functions below to the setTimeout
-                1. Get the "i" element
-                2. Compare two classnames (if we have 2 cards in the array)
-                3. If they are the same, put the to 'open'
-                4. else put to closed
-                5. Clear the arraay
-            */
  
     function addClickedCard(clickCard) {
         
@@ -175,8 +153,6 @@ function showCards(){
         console.log('Im in');
         if (clickedCards.length === 1) {
 
-
-            //increase counter here
             addMove();
             // console.log('something')
 
@@ -203,14 +179,6 @@ function showCards(){
         }
 
 }
-
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
